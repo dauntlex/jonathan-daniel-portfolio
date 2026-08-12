@@ -86,3 +86,28 @@
     aspect-ratio: 1 / 1;
   }
 }
+
+
+/* V3.2 — restore the generous page gutters from the desktop mockup */
+.hero.home-section,
+.work-section.home-section,
+.split-section.home-section,
+.list-section.home-section {
+  width: min(calc(100% - 96px), 1540px);
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.hero.home-section {
+  padding-left: 0;
+  padding-right: 0;
+}
+
+@media (max-width: 850px) {
+  .hero.home-section,
+  .work-section.home-section,
+  .split-section.home-section,
+  .list-section.home-section {
+    width: min(calc(100% - 36px), 1180px);
+  }
+}
