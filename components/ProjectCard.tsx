@@ -1,0 +1,3 @@
+import Link from 'next/link'
+import { Project } from './types'
+export default function ProjectCard({project}:{project:Project}){return <article className="project-card"><Link href={`/projects/${project.slug}`} className="project-image"><img src={project.image} alt=""/><span className="project-number">{project.number}</span></Link><div className="project-copy"><p className="eyebrow">{project.category}</p><h3>{project.title}</h3><p>{project.description}</p><div className="tags">{project.stack.map(x=><span key={x}>{x}</span>)}</div><Link className="text-link" href={`/projects/${project.slug}`}>View case study <span>↗</span></Link></div></article>}

@@ -1,0 +1,38 @@
+{
+  "projects": [
+    {
+      "slug": "shewhead-shoes",
+      "title": "Shewhead Shoes",
+      "category": "Mobile eCommerce App",
+      "description": "A mobile shopping experience covering discovery, product detail and checkout.",
+      "cover": "/projects/shewhead-shoes/overview.png",
+      "screenshots": [
+        "/projects/shewhead-shoes/home.png",
+        "/projects/shewhead-shoes/product page.png",
+        "/projects/shewhead-shoes/checkout payment.png"
+      ],
+      "tools": [
+        "Figma",
+        "UI/UX",
+        "eCommerce"
+      ],
+      "published": true
+    },
+    {
+      "slug": "smart-brain",
+      "title": "Smart Brain",
+      "category": "Full Stack Web Application",
+      "description": "A full-stack face recognition application built with React, Node.js, Express.js, PostgreSQL and REST APIs.",
+      "cover": "/projects/smart-brain/placeholder.svg",
+      "screenshots": [],
+      "tools": [
+        "React",
+        "Node.js",
+        "Express.js",
+        "PostgreSQL",
+        "REST APIs"
+      ],
+      "published": true
+    }
+  ]
+}
