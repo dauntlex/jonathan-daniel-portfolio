@@ -1,26 +1,10 @@
-# Adding a project
+# Projects
 
-1. Create `public/projects/my-project/`.
-2. Drag your cover image and screenshots into that folder.
-3. Add the project to `data/projects.json`.
-4. Commit the changes to GitHub.
-5. Vercel automatically redeploys when connected to the repository.
+The homepage uses a horizontal, scrollable **Things I've Built** rail.
 
-Example:
-```json
-{
-  "slug": "my-project",
-  "title": "My Project",
-  "category": "Product Design",
-  "description": "Short project description.",
-  "cover": "/projects/my-project/hero.png",
-  "screenshots": [
-    "/projects/my-project/screen-1.png",
-    "/projects/my-project/screen-2.png"
-  ],
-  "tools": ["Figma", "React"],
-  "published": true
-}
-```
+- Shewhead Shoes is represented by a clean project card on the homepage.
+- Its detailed screenshots belong on `/projects/shewhead-shoes`.
+- Smart Brain has its own project page.
+- New projects can be added to the project data and will not need a redesign.
 
-This keeps project content separate from the visual layout.
+For the next phase, the project manager can be upgraded from local draft storage to persistent CMS storage.

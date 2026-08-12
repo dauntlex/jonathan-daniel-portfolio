@@ -1,14 +1,131 @@
-import Link from 'next/link'
-import Image from 'next/image'
-import {site,skills,projects,experience,education,courses} from '../data/site'
-import SectionHeading from '../components/SectionHeading'
+import Image from "next/image";
+import Link from "next/link";
 
-export default function Home(){return <main>
-<section className="hero wrap"><div className="hero-copy"><p className="eyebrow">Full Stack Developer · Product Designer</p><h1>Jonathan<br/><i>Daniel</i></h1><p className="hero-lead">I build modern, responsive and user-centered digital experiences — from intuitive interfaces to full-stack applications.</p><div className="actions"><Link className="button dark" href="/projects">View projects <span>↗</span></Link><a className="button outline" href={`mailto:${site.email}`}>Contact me</a></div><div className="contact-strip"><span>{site.location}</span><a href={`tel:${site.phone}`}>{site.phone}</a><a href={`mailto:${site.email}`}>{site.email}</a></div></div><div className="portrait"><Image src="/jonathan-daniel.jpg" alt="Jonathan Daniel" fill priority sizes="(max-width: 850px) 100vw, 45vw"/></div></section>
-<section className="projects-preview" id="projects"><div className="wrap"><div className="project-rail-heading"><SectionHeading eyebrow="01 — Things I’ve built" title="Selected work." intro="A growing collection of products, interfaces and applications. Scroll through the work and open a project when you want the full case study."/><Link className="text-link project-all" href="/projects">View all projects <span>↗</span></Link></div><div className="project-rail">{projects.map(p=><Link href={`/projects/${p.slug}`} className="rail-card" key={p.slug}><div className="rail-top"><span>{p.number}</span><span>{p.category}</span></div><div className="rail-space"><span className="rail-label">PROJECT {p.number}</span></div><div className="rail-copy"><h3>{p.title}</h3><p>{p.description}</p><div className="tags">{p.stack.slice(0,3).map(x=><span key={x}>{x}</span>)}</div></div><span className="rail-arrow">↗</span></Link>)}</div><div className="rail-hint">Drag / scroll horizontally <span>→</span></div></div></section>
-<section id="about" className="wrap split"><div><SectionHeading eyebrow="02 — About" title="Design with purpose. Build with intent."/></div><div className="prose"><p>I’m a Full Stack Software Developer and Product Designer based in Abuja, Nigeria. My background combines computer science with focused learning in frontend development, UI/UX, full-stack engineering and AI engineering.</p><p>I enjoy solving complex problems, designing intuitive interfaces and using modern technologies to turn ideas into useful digital products.</p><a className="text-link" href="/resume/Jonathan-Daniel-Resume.docx">Download CV <span>↓</span></a></div></section>
-<section id="skills" className="tinted"><div className="wrap"><SectionHeading eyebrow="03 — Capabilities" title="A practical toolkit."/><div className="skill-grid">{skills.map((s,i)=><div className="skill" key={s.title}><span className="skill-no">0{i+1}</span><h3>{s.title}</h3><div className="tags">{s.items.map(x=><span key={x}>{x}</span>)}</div></div>)}</div></div></section>
-<section id="experience" className="wrap"><SectionHeading eyebrow="04 — Experience" title="Professional journey." intro="Experience across website design and product design, supported by technical training."/><div className="timeline">{experience.map((e,i)=><div className="timeline-row" key={e.role}><div className="timeline-date">{e.date}</div><div><p className="eyebrow">0{i+1}</p><h3>{e.role}</h3><p className="company">{e.company}</p><p className="muted">{e.description}</p></div></div>)}</div></section>
-<section id="education" className="tinted"><div className="wrap"><SectionHeading eyebrow="05 — Education & learning" title="Always learning."/><div className="education-grid"><div className="education-main"><p className="eyebrow">Education</p><h3>{education.degree}</h3><p>{education.school}</p><span>{education.period}</span></div><div className="course-grid">{courses.map(c=><div className="course" key={c.title}><h3>{c.title}</h3><p>{c.provider} · {c.period}</p><span>{c.detail}</span></div>)}</div></div></div></section>
-<section id="contact" className="contact-section"><div className="wrap contact-grid"><div><p className="eyebrow">06 — Contact</p><h2>Have a project<br/><i>in mind?</i></h2><p className="section-intro">I’m open to new opportunities and exciting projects. Let’s build something considered and useful.</p></div><div className="contact-cards"><a href={`mailto:${site.email}`}><span>Email</span><strong>{site.email}</strong></a><a href={`tel:${site.phone}`}><span>Phone</span><strong>{site.phone}</strong></a><a href={site.linkedin} target="_blank"><span>LinkedIn</span><strong>jonathandaniels14ab ↗</strong></a><Link href="/admin"><span>Portfolio Admin</span><strong>Manage projects ↗</strong></Link></div></div></section>
-</main>}
+const projects = [
+  {
+    number: "01",
+    slug: "shewhead-shoes",
+    title: "Shewhead Shoes",
+    category: "Mobile eCommerce App",
+    description: "A mobile shopping experience covering discovery, product detail and checkout.",
+    tags: ["Product Design", "UI/UX", "eCommerce"],
+  },
+  {
+    number: "02",
+    slug: "smart-brain",
+    title: "Smart Brain",
+    category: "Full Stack Web Application",
+    description: "A full-stack face recognition application built with React, Node.js, Express.js, PostgreSQL and REST APIs.",
+    tags: ["React", "Node.js", "PostgreSQL"],
+  },
+  {
+    number: "03",
+    slug: "coming-soon",
+    title: "Next Project",
+    category: "Coming Soon",
+    description: "A new project will live here as the portfolio grows.",
+    tags: ["Future Work"],
+  },
+];
+
+export default function Home() {
+  return (
+    <main>
+      <section className="hero home-section">
+        <div className="hero-copy">
+          <p className="eyebrow">FULL STACK DEVELOPER · PRODUCT DESIGNER</p>
+          <h1>
+            Jonathan
+            <br />
+            <em>Daniel</em>
+          </h1>
+          <p className="hero-lede">
+            I build modern, responsive and user-centered digital experiences —
+            from intuitive interfaces to full-stack applications.
+          </p>
+          <div className="hero-actions">
+            <a className="button dark" href="#work">View projects ↗</a>
+            <a className="button" href="#contact">Contact me</a>
+          </div>
+          <div className="hero-meta">
+            <span>Abuja, Nigeria</span>
+            <span>08143413806</span>
+            <span>jonathaandaniels@gmail.com</span>
+          </div>
+        </div>
+        <div className="hero-image">
+          <Image src="/profile.jpg" alt="Jonathan Daniel" fill priority sizes="(max-width: 900px) 100vw, 50vw" />
+        </div>
+      </section>
+
+      <section id="work" className="work-section home-section">
+        <div className="section-heading">
+          <div>
+            <p className="eyebrow">01 — THINGS I'VE BUILT</p>
+            <h2>Selected work.</h2>
+          </div>
+          <p className="section-note">Drag or scroll horizontally to explore.</p>
+        </div>
+
+        <div className="project-rail" aria-label="Things I've built">
+          {projects.map((project) => (
+            <Link
+              className="project-card"
+              href={project.slug === "coming-soon" ? "#contact" : `/projects/${project.slug}`}
+              key={project.slug}
+            >
+              <div className="project-card-top">
+                <span>{project.number}</span>
+                <span>{project.category}</span>
+              </div>
+              <div className="project-card-space" aria-hidden="true" />
+              <div className="project-card-bottom">
+                <div>
+                  <h3>{project.title}</h3>
+                  <p>{project.description}</p>
+                  <div className="project-tags">
+                    {project.tags.map((tag) => <span key={tag}>{tag}</span>)}
+                  </div>
+                </div>
+                <span className="project-arrow">↗</span>
+              </div>
+            </Link>
+          ))}
+        </div>
+
+        <div className="work-footer">
+          <Link href="/projects">View all projects ↗</Link>
+        </div>
+      </section>
+
+      <section id="about" className="split-section home-section">
+        <div><p className="eyebrow">02 — ABOUT</p><h2>Designing with intention.</h2></div>
+        <div><p>I’m a full-stack developer and product designer focused on turning ideas into clear, useful digital products. I care about thoughtful interfaces, solid engineering and experiences that feel effortless to use.</p></div>
+      </section>
+
+      <section id="skills" className="list-section home-section">
+        <p className="eyebrow">03 — SKILLS</p>
+        <div className="skill-grid">
+          <div><h3>Development</h3><p>React · Next.js · JavaScript · TypeScript · Node.js · Express · PostgreSQL · REST APIs</p></div>
+          <div><h3>Design</h3><p>Figma · UI/UX · Product Design · Responsive Design · Design Systems</p></div>
+        </div>
+      </section>
+
+      <section id="experience" className="split-section home-section">
+        <div><p className="eyebrow">04 — EXPERIENCE</p><h2>Building across design and development.</h2></div>
+        <div><p>My work spans product thinking, interface design and full-stack implementation. Each project is an opportunity to simplify a problem and make the final experience better.</p></div>
+      </section>
+
+      <section id="education" className="split-section home-section">
+        <div><p className="eyebrow">05 — EDUCATION</p><h2>Continuous learning.</h2></div>
+        <div><p>Education, courses and practical project work that support my development across software engineering and product design.</p></div>
+      </section>
+
+      <section id="contact" className="contact-section home-section">
+        <p className="eyebrow">06 — CONTACT</p>
+        <h2>Have a project in mind?</h2>
+        <a href="mailto:jonathaandaniels@gmail.com">jonathaandaniels@gmail.com ↗</a>
+      </section>
+    </main>
+  );
+}
