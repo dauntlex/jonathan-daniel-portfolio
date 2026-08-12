@@ -60,3 +60,29 @@
   .project-card h3 { font-size:34px; }
   .project-card-space { min-height:180px; }
 }
+
+/* V3.1 — constrain the portrait so Next/Image fill cannot escape its hero column */
+.hero-image {
+  position: relative;
+  width: 100%;
+  max-width: 560px;
+  aspect-ratio: 1 / 1;
+  justify-self: end;
+  overflow: hidden;
+  background: #e9e5de;
+}
+.hero-image img {
+  object-fit: cover;
+  object-position: center center;
+}
+@media (max-width: 900px) {
+  .hero {
+    grid-template-columns: 1fr;
+    gap: 42px;
+  }
+  .hero-image {
+    max-width: 100%;
+    justify-self: stretch;
+    aspect-ratio: 1 / 1;
+  }
+}
