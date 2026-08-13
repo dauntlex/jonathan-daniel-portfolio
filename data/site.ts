@@ -1,7 +1,6 @@
 export const site = {
   name: 'Jonathan Daniel',
   title: 'Full Stack Software Developer / Product Designer',
-  location: 'Abuja, Nigeria 900108',
   phone: '08143413806',
   email: 'Jonathaandaniels@gmail.com',
   linkedin: 'https://www.linkedin.com/in/jonathandaniels14ab',

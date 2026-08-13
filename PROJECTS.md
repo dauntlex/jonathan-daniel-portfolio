@@ -1,10 +1,5 @@
 # Projects
 
-The homepage uses a horizontal, scrollable **Things I've Built** rail.
+The homepage presents the three featured projects as a horizontal Things I've Built rail. Detailed screenshots remain inside the project case studies.
 
-- Shewhead Shoes is represented by a clean project card on the homepage.
-- Its detailed screenshots belong on `/projects/shewhead-shoes`.
-- Smart Brain has its own project page.
-- New projects can be added to the project data and will not need a redesign.
-
-For the next phase, the project manager can be upgraded from local draft storage to persistent CMS storage.
+The homepage also includes About Me, Skills, a Resume link, and a Contact / Call to Action section with a mail-based contact form.
