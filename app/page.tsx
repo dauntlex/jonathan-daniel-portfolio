@@ -1,14 +1,20 @@
 import Image from "next/image";
 import Link from "next/link";
-import { site } from "../data/site";
+import { site, projects as localProjects } from "../data/site"
+import { getProjects } from "../lib-github";
 
-const projects = [
-  { number: "01", slug: "shewhead-shoes", title: "Shewhead Shoes", category: "Mobile eCommerce App", description: "A mobile shopping experience covering discovery, product detail and checkout.", tags: ["Product Design", "UI/UX", "eCommerce"] },
-  { number: "02", slug: "smart-brain", title: "Smart Brain", category: "Full Stack Web Application", description: "A full-stack face recognition application built with React, Node.js, Express.js, PostgreSQL and REST APIs.", tags: ["React", "Node.js", "PostgreSQL"] },
-  { number: "03", slug: "coming-soon", title: "Next Project", category: "Coming Soon", description: "A new project will live here as the portfolio grows.", tags: ["Future Work"] },
-];
+async function loadProjects() {
+  try {
+    const remote = await getProjects()
+    return remote.filter(p => p.published).map((p, i) => ({ number: p.number || String(i + 1).padStart(2, "0"), slug: p.slug, title: p.title, category: p.category, description: p.description, tags: p.tools }))
+  } catch {
+    return localProjects.filter(p => p.featured).map(p => ({ number: p.number, slug: p.slug, title: p.title, category: p.category, description: p.description, tags: p.stack }))
+  }
+}
 
-export default function Home() {
+
+export default async function Home() {
+  const projects = await loadProjects()
   return (
     <main>
       <section className="hero home-section">

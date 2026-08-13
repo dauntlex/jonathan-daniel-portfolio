@@ -151,3 +151,69 @@ footer { padding:0; }
   .hero-actions .button,.resume-actions .button { justify-content:center; }
   .contact-form { padding:22px; }
 }
+
+/* Editable project manager */
+.admin { padding-top: 150px; padding-bottom: 100px; }
+.admin-top { display:flex; justify-content:space-between; gap:30px; align-items:flex-end; margin-bottom:40px; }
+.admin-top h1,.admin-login h1 { font-size:clamp(48px,7vw,86px); line-height:.95; letter-spacing:-.055em; font-weight:500; margin:8px 0 18px; }
+.admin-actions { display:flex; gap:10px; flex-wrap:wrap; }
+.admin-card { border:1px solid var(--line); background:#f3efe8; padding:28px; }
+.admin-list-head { display:flex; justify-content:space-between; align-items:center; margin-bottom:15px; }
+.admin-list-head h2 { margin:0; font-weight:500; }
+.admin-list-head span { font-size:11px; color:var(--muted); }
+.admin-project { display:grid; grid-template-columns:90px 1fr auto; gap:20px; align-items:center; border-top:1px solid var(--line); padding:18px 0; }
+.admin-project-thumb { width:90px; height:72px; overflow:hidden; background:#ddd7ce; display:grid; place-items:center; }
+.admin-project-thumb img { width:100%; height:100%; object-fit:cover; }
+.admin-project-thumb span { font-size:20px; }
+.admin-project-info strong { display:block; font-size:18px; font-weight:500; }
+.admin-project-info span,.admin-project-info small { font-size:11px; color:var(--muted); }
+.admin-project-info p { margin:7px 0; color:#5e5a54; font-size:13px; }
+.admin-project-actions { display:flex; gap:8px; }
+.admin-project-actions button,.tag-add button { border:1px solid #aaa39a; background:transparent; padding:8px 12px; cursor:pointer; }
+.admin-login { max-width:520px; margin:0 auto; }
+.admin-login form { display:grid; gap:16px; margin:30px 0 20px; }
+.admin label { display:block; font-size:11px; text-transform:uppercase; letter-spacing:.1em; color:#625d56; }
+.admin input,.admin textarea { width:100%; margin-top:8px; padding:13px 14px; border:1px solid #bcb5aa; background:#fffdf9; color:#272624; font:inherit; font-size:14px; outline:none; box-sizing:border-box; }
+.admin input:focus,.admin textarea:focus { border-color:#71695f; }
+.admin-message { padding:12px 14px; border:1px solid #bcb5aa; background:#ebe5db; margin:0 0 18px; font-size:13px; }
+.admin-modal { position:fixed; inset:0; z-index:100; background:rgba(20,19,18,.55); padding:30px; overflow:auto; }
+.admin-editor { max-width:1100px; margin:30px auto; background:#f7f3ec; padding:30px; box-shadow:0 25px 80px rgba(0,0,0,.2); }
+.admin-editor-head,.admin-editor-foot { display:flex; justify-content:space-between; align-items:center; gap:20px; }
+.admin-editor-head { border-bottom:1px solid var(--line); padding-bottom:20px; margin-bottom:25px; }
+.admin-editor-head h2 { margin:4px 0 0; font-size:30px; font-weight:500; }
+.admin-editor-head > button { border:0; background:transparent; font-size:30px; cursor:pointer; }
+.editor-grid { display:grid; grid-template-columns:1fr 1fr; gap:18px; }
+.editor-grid .wide { grid-column:1 / -1; }
+.tag-editor { margin-top:8px; border:1px solid #bcb5aa; background:#fffdf9; padding:12px; }
+.tag-editor .project-tags { margin:0 0 10px; }
+.tag-editor .project-tags button { border:1px solid #aaa39a; background:#eee8df; border-radius:100px; padding:6px 10px; font-size:11px; cursor:pointer; }
+.tag-add { display:flex; gap:8px; }
+.tag-add input { margin:0; }
+.upload-grid { display:grid; grid-template-columns:1fr 1fr; gap:18px; }
+.upload-title { margin:0 0 10px; font-size:12px; text-transform:uppercase; letter-spacing:.1em; }
+.admin-upload-preview { width:100%; max-height:250px; object-fit:cover; display:block; margin-bottom:10px; background:#ddd7ce; }
+.dropzone { border:1px dashed #aaa39a; min-height:90px; display:grid !important; place-items:center; text-align:center; padding:15px; cursor:pointer; background:#eee9e1; }
+.dropzone input { display:none; }
+.screenshot-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:8px; margin-bottom:10px; }
+.screenshot-grid img { width:100%; aspect-ratio:4/3; object-fit:cover; background:#ddd7ce; }
+.toggle { display:flex !important; gap:10px; align-items:center; text-transform:none !important; letter-spacing:0 !important; font-size:13px !important; }
+.toggle input { width:auto; margin:0; }
+.admin-editor-foot { border-top:1px solid var(--line); margin-top:25px; padding-top:20px; }
+@media(max-width:760px){ .admin-top { align-items:flex-start; flex-direction:column; } .admin-project { grid-template-columns:60px 1fr; } .admin-project-thumb { width:60px; height:60px; } .admin-project-actions { grid-column:2; } .editor-grid,.upload-grid { grid-template-columns:1fr; } .editor-grid .wide { grid-column:auto; } .admin-modal { padding:10px; } .admin-editor { padding:20px; margin:10px auto; } }
+
+/* Dynamic case studies */
+.project-detail { padding-top:150px; padding-bottom:120px; }
+.back-link { display:inline-block; color:inherit; text-decoration:none; margin-bottom:70px; font-size:13px; }
+.project-detail h1 { font-size:clamp(60px,10vw,150px); line-height:.88; letter-spacing:-.07em; font-weight:500; margin:10px 0 25px; max-width:1000px; }
+.project-detail-lede { max-width:700px; font-size:20px; line-height:1.5; color:var(--muted); }
+.project-detail-meta { display:flex; flex-wrap:wrap; gap:8px; margin:25px 0 55px; }
+.project-detail-meta span { border:1px solid var(--line); padding:7px 11px; border-radius:100px; font-size:11px; }
+.project-detail-cover { position:relative; width:100%; aspect-ratio:16/9; overflow:hidden; background:#e5dfd5; }
+.project-detail-cover img { object-fit:cover; }
+.project-detail-grid { display:grid; grid-template-columns:1fr 2fr; gap:50px; padding:80px 0; border-bottom:1px solid var(--line); }
+.project-links { display:flex; gap:18px; margin-top:30px; }
+.project-links a { color:inherit; border-bottom:1px solid currentColor; padding-bottom:5px; text-decoration:none; }
+.project-gallery { display:grid; grid-template-columns:1fr 1fr; gap:18px; padding-top:40px; }
+.gallery-image { position:relative; aspect-ratio:4/3; overflow:hidden; background:#e5dfd5; }
+.gallery-image img { object-fit:cover; }
+@media(max-width:800px){ .project-detail { padding-top:120px; } .project-detail-grid,.project-gallery { grid-template-columns:1fr; } }
